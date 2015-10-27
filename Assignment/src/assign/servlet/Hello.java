@@ -61,9 +61,11 @@ public class Hello extends HttpServlet {
 	        	if(s.equals(psw)){
 	        		response.setContentType("text/html");
 	        		HttpSession session=request.getSession();  
-			        session.setAttribute("name",usr.toLowerCase());  
+			        session.setAttribute("name",usr.toLowerCase());
+			        session.setAttribute("loggedIn", "yes");
 //			        request.getRequestDispatcher("Successfull_login.jsp").forward(request, response);
-			        request.getRequestDispatcher("shopping_cart.jsp").forward(request, response);
+//			        request.getRequestDispatcher("shopping_cart.jsp").forward(request, response);
+			        response.sendRedirect("shopping_cart.jsp");
 			        
 	        	}
 	        	else{

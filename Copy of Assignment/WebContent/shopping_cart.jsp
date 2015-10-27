@@ -30,10 +30,10 @@
 	
 			            <li><a href="my_cart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
 			            <% if(session.getAttribute("loggedIn")=="yes"){ %>
-			        	<li><a href="LogoutServlet"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+			        	<li><a href="logout.do"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			        	<%} 
 			        	else {%>
-			        	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			        	<li><a href="user.do"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			        	<%} %>
 			        </ul>
 			    </div>

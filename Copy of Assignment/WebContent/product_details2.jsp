@@ -1,4 +1,4 @@
-
+<%@ page import="java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,10 +30,10 @@
 			        <ul class="nav navbar-nav pull-right">
 			            <li><a href="my_cart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
 			        	<% if(session.getAttribute("loggedIn")=="yes"){ %>
-			        	<li><a href="LogoutServlet"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+			        	<li><a href="logout.do"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			        	<%} 
 			        	else {%>
-			        	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			        	<li><a href="user.do"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			        	<%} %>
 			        </ul>
 			    </div>
@@ -42,18 +42,19 @@
 		<div class="container-fluid">
 			<div class="col-sm-12 col-xs-12">
 				<div class="col-sm-8 col-xs-12 product-image text-center">
-					
+					<img id = "image" src='${image}' style="width:300px;margin-left:-65px">
 				</div>
 				<div class="col-sm-3 col-xs-12 product-description">
-					
+					<h3 id = "name">${name }</h3>
+					<h4 id = "price">Rs.${price}</h4>
 				</div>
 			</div>
 			<div class="col-sm-3 col-sm-offset-8 col-xs-12 text-center">
-				<button type="button" class="btn btn-primary add-to-cart"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART
+				<button type="button" class="btn btn-primary add-to-cart" id="${productId}"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART
 			    </button>
 			</div>
 			<div class="col-sm-3 col-sm-offset-8 col-xs-12 text-center" style="margin-top:10px;">
-				<a href="login.jsp"><button type="button" class="btn btn-primary">BUY NOW
+				<a href="user.do"><button type="button" class="btn btn-primary">BUY NOW
 			    </button></a>
 			</div>
 			<div class="col-sm-3 col-sm-offset-8 col-xs-12 text-center" style="margin-top:10px;">
@@ -64,8 +65,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		
-		<script src="js/product_details.js"></script>
+		<script src="js/product_details2.js"></script>
 	
 	</body>
 </html>

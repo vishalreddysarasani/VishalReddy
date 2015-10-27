@@ -58,8 +58,8 @@ public class Sports extends HttpServlet {
 			        if((rsmd.getColumnType(i)==java.sql.Types.VARCHAR)&&(columnName != "sports_id")){
 			        obj.put(columnName, rs.getString(columnName));
 			        }
-			        else if(rsmd.getColumnType(i)==java.sql.Types.INTEGER){
-			        	obj.put(columnName, rs.getInt(columnName));
+			        else if(rsmd.getColumnType(i)==java.sql.Types.DOUBLE){
+			        	obj.put(columnName, rs.getDouble(columnName));
 			        }
 			        else{
 			        	continue;

@@ -58,6 +58,7 @@ overflow-x: hidden;
 .product-details{
 	text-align: center;
 	padding-top: 20px;
+	cursor:pointer;
 }
 .product-details2{
 	text-align: center;
