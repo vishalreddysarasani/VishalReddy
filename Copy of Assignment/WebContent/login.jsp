@@ -46,7 +46,7 @@
 		              <button type="submit" class="form-control btn btn-primary" id="login">Login</button>
 		            </div>
 		            <div class="form-group col-sm-5 col-sm-offset-2" style="padding:8px">
-		              <a href="forgot.html">Forgot Password</a>
+		              <a href="#">Forgot Password</a>
 		            </div>
 		            <div class="form-group col-sm-2 col-xs-3" style="padding:0px">
 		              <a href="https://www.facebook.com/"><img src="images/facebook-icon.png"></a>

@@ -280,72 +280,38 @@ $(document).ready(function(){
 	$('input:checkbox').prop('checked', false);
 	 
 	 $.ajax({
-	    	url:"/Assignment/home.do",
-	    	success: function(Home_product_keys){
-	    		
-	    		homeKeys(Home_product_keys);
-			
-			$(".product-details").click(function(){
-		       var product_id = $(this).attr('id');
-		       for(var i=0;i<Home_product_keys.length;i++){
-		         if(Home_product_keys[i]["id"] == product_id){
-		           product_desc = Home_product_keys[i];
-		         }
-		       }
-		       
-		       localStorage.setItem('product_desc2', JSON.stringify(product_desc));
-		           	
-		           	window.location="product.do?productId="+product_id+"";
-
-			 });
-			  
-	    
-
-	    	}});
+		 url:"/Assignment/home.do",
+	     success: function(Home_product_keys){
+	    	 homeKeys(Home_product_keys);
+			 $(".product-details").click(function(){
+			       var product_id = $(this).attr('id');
+			       window.location="product.do?productId="+product_id+"";
+	
+				 });
+			 }
+	 });
    
    $.ajax({
-   	url:"/Assignment/books.do",
-   	success: function(Books_product_keys){
-   		
-   		books(Books_product_keys);
-		
-		$(".product-details").click(function(){
-			
-	       var product_id = $(this).attr('id');
-	       for(var i=0;i<Books_product_keys.length;i++){
-	         if(Books_product_keys[i]["id"] == product_id){
-	           product_desc = Books_product_keys[i];
-	         }
-	       }
-	       localStorage.setItem('product_desc2', JSON.stringify(product_desc));
-	           	
-	           	window.location="product.do?productId="+product_id+"";
-
-		 });
-		  
-   
-
-   	}});
+	   url:"/Assignment/books.do",
+	   success: function(Books_product_keys){
+		   books(Books_product_keys);
+		   $(".product-details").click(function(){
+				var product_id = $(this).attr('id');
+				window.location="product.do?productId="+product_id+"";
+	
+		   });
+		}
+   });
  
    $.ajax({
 	   	url:"/Assignment/electronics.do",
 	   	success: function(Electronics_products_keys){
-	   		
 	   		electronics(Electronics_products_keys);
-			
 			$(".product-details").click(function(){
-				
-		       var product_id = $(this).attr('id');
-		       for(var i=0;i<Electronics_products_keys.length;i++){
-		         if(Electronics_products_keys[i]["id"] == product_id){
-		           product_desc = Electronics_products_keys[i];
-		         }
-		       }
-		       localStorage.setItem('product_desc2', JSON.stringify(product_desc));
-		           	
-		           	window.location="product.do?productId="+product_id+"";
+				var product_id = $(this).attr('id');
+		        window.location="product.do?productId="+product_id+"";
 
-			 });
+			});
 			  
 	   
 
@@ -359,50 +325,25 @@ $(document).ready(function(){
 			$(".product-details").click(function(){
 				
 		       var product_id = $(this).attr('id');
-		       for(var i=0;i<Clothing_products_keys.length;i++){
-		         if(Clothing_products_keys[i]["id"] == product_id){
-		           product_desc = Clothing_products_keys[i];
-		         }
-		       }
-		       localStorage.setItem('product_desc2', JSON.stringify(product_desc));
-		           	
-		           	window.location="product.do?productId="+product_id+"";
+		       window.location="product.do?productId="+product_id+"";
 
 			 });
 			  
 	   
 
-	   	}});
+	   	}
+   });
     $.ajax({
     	url:"/Assignment/sports.do",
     	success: function(Sports_products_keys){
-    		console.log(Sports_products_keys);
-		sports(Sports_products_keys);
-		
-		$(".product-details").click(function(){
-			console.log("hdfj");
-			
-	       var product_id = $(this).attr('id');
-	       for(var i=0;i<Sports_products_keys.length;i++){
-	         if(Sports_products_keys[i]["id"] == product_id){
-	           product_desc = Sports_products_keys[i];
-	         }
-	       }
-	       
-	       
-	       localStorage.setItem('product_desc2', JSON.stringify(product_desc));
-	           	
-	           	window.location="product.do?productId="+product_id+"";
-
-		 });
-		  
-    
-
-    	}});
-    
+			sports(Sports_products_keys);
+			$(".product-details").click(function(){
+			    var product_id = $(this).attr('id');
+		        window.location="product.do?productId="+product_id+"";
 	
-    
+			});
+    	}
+    });
     $('.product-filter').on("change", function(){filters();});
     
-
 });
