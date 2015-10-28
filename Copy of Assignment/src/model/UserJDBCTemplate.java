@@ -1,4 +1,4 @@
-package assign.servlet;
+package model;
 
 import java.util.List;
 

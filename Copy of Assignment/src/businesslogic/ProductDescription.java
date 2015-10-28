@@ -1,9 +1,12 @@
-package assign.servlet;
+package businesslogic;
 
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import model.Product;
+import model.ProductJDBCTemplate;
 @Component
 public class ProductDescription {
 	@Autowired

@@ -1,4 +1,4 @@
-package assign.servlet;
+package controller;
 
 import java.util.List;
 
@@ -14,6 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import businesslogic.ProductDescription;
+import businesslogic.Register;
+import businesslogic.Validation;
+import model.CartProduct;
+import model.Product;
+import model.ProductJDBCTemplate;
+import model.User;
 
 @Controller
 public class UserController {
