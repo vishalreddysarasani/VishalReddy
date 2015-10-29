@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import dao.UserJDBCTemplate;
 import model.User;
-import model.UserJDBCTemplate;
 
 @Component
 public class Register {
@@ -16,6 +16,7 @@ public class Register {
 
 	public boolean registerUser(String userId,String password){
 		boolean b = false;
+		String generatedPassword = EncryptPassword.encryptPassword(password);
 	      List<User> users = userJDBCTemplate.listUsers();
 	    for(User id:users){
 	    	if(id.getUserId().equalsIgnoreCase(userId)){
@@ -24,7 +25,7 @@ public class Register {
 	    }
 	    if(!b){
 	    	 userId = userId.toLowerCase();
-    		userJDBCTemplate.create(userId, password);
+    		userJDBCTemplate.create(userId, generatedPassword);
 	    }
 	    return b;
 	}

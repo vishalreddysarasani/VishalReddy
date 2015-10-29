@@ -18,9 +18,9 @@ import org.springframework.web.servlet.ModelAndView;
 import businesslogic.ProductDescription;
 import businesslogic.Register;
 import businesslogic.Validation;
+import dao.ProductJDBCTemplate;
 import model.CartProduct;
 import model.Product;
-import model.ProductJDBCTemplate;
 import model.User;
 
 @Controller

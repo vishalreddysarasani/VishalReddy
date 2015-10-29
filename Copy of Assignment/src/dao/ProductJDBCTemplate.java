@@ -1,4 +1,4 @@
-package model;
+package dao;
 
 
 
@@ -9,6 +9,11 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+
+import model.CartProduct;
+import model.CartProductMapper;
+import model.Product;
+import model.ProductMapper;
 @Component
 public class ProductJDBCTemplate {
 	
